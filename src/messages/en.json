@@ -1,0 +1,89 @@
+{
+  "Messages": {
+    "fillAllFields": "Please fill all the required fields",
+    "genericError": "Something went wrong, please try again."
+  },
+  "Global": {
+    "loading": "Loading.."
+  },
+  "Login": {
+    "title": "Login",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "loginButton": "Login",
+    "loginError": "Login failed. Please check your email and password."
+  },
+  "Announcement": {
+    "title": "Announcements",
+    "date": "Date",
+    "createdBy": "Created By"
+  },
+  "AnnouncementManagement": {
+    "announcementManagement": "Announcement Management",
+    "title": "Title",
+    "content": "Content",
+    "date": "Date",
+    "addAnnouncement": "Add New Announcement",
+    "previousAnnouncements": "Previous Announcements",
+    "createdBy": "Created By"
+  },
+  "Menu": {
+    "home": "Home",
+    "announcements": "Announcements",
+    "announcementManagement": "Announcement Management",
+    "debtStatus": "Debt Status",
+    "userManagement": "User Management",
+    "debtManagement": "Debt Management"
+  },
+  "Footer": {
+    "allRightsReserved": "All rights reserved."
+  },
+  "Header": {
+    "logout": "Logout"
+  },
+  "Dashboard": {
+    "welcome": "Welcome, {name}!",
+    "userMsg": "This is the {appName} home page. You can access other pages from the left menu.",
+    "adminWelcome": "Welcome, Admin!",
+    "adminMsg": "As an admin, you have access to user management and debt management pages."
+  },
+  "DebtStatus": {
+    "debtStatus": "Debt Status",
+    "totalDebt": "Total Debt",
+    "currencySymbol": "₺"
+  },
+  "DebtManagement": {
+    "debtManagement": "Debt Management",
+    "addDebt": "Add New Debt",
+    "listDebt": "List of Debts",
+    "user": "User",
+    "amount": "Amount (₺)",
+    "date": "Date",
+    "selectUser": "Select User",
+    "userSearchMode": "User Search Mode",
+    "userSearchModeEmail": "By Email",
+    "userSearchModeDoorNumber": "By Door Number",
+    "searchTerm": "Search Term",
+    "doorNumber": "Door Number",
+    "debt": "Debt"
+  },
+  "Users": {
+    "userManagement": "User Management",
+    "editUser": "Edit User",
+    "addUser": "Add New User",
+    "name": "Name",
+    "surname": "Surname",
+    "telephone": "Telephone",
+    "flatNumber": "Flat Number",
+    "email": "Email",
+    "password": "Password",
+    "add": "Add",
+    "update": "Update",
+    "role": "Role",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "searchUser": "Search User",
+    "userCreateMsg": "User created and login credentials sent successfully"
+  }
+}

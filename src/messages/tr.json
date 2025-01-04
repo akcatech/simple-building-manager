@@ -1,0 +1,89 @@
+{
+  "Messages": {
+    "fillAllFields": "Lütfen gerekli tüm alanları doldurun",
+    "genericError": "Bir hata oluştu, lütfen tekrar deneyin."
+  },
+  "Global": {
+    "loading": "Yükleniyor.."
+  },
+  "Login": {
+    "title": "Giriş Yap",
+    "emailLabel": "Email",
+    "passwordLabel": "Şifre",
+    "loginButton": "Giriş Yap",
+    "loginError": "Giriş başarısız. Lütfen email ve şifrenizi kontrol edin."
+  },
+  "Announcement": {
+    "title": "Duyurular",
+    "date": "Tarih",
+    "createdBy": "Oluşturan"
+  },
+  "AnnouncementManagement": {
+    "announcementManagement": "Duyuru Yönetimi",
+    "title": "Başlık",
+    "content": "İçerik",
+    "date": "Tarih",
+    "addAnnouncement": "Yeni Duyuru Ekle",
+    "previousAnnouncements": "Önceki Duyurular",
+    "createdBy": "Oluşturan"
+  },
+  "Menu": {
+    "home": "Ana Sayfa",
+    "announcements": "Duyurular",
+    "announcementManagement": "Duyuru Yönetimi",
+    "debtStatus": "Borç Durumu",
+    "userManagement": "Kullanıcı Yönetimi",
+    "debtManagement": "Borç Yönetimi"
+  },
+  "Footer": {
+    "allRightsReserved": "Tüm hakları saklıdır."
+  },
+  "Header": {
+    "logout": "Çıkış Yap"
+  },
+  "Dashboard": {
+    "welcome": "Hoş geldiniz, {name}!",
+    "userMsg": "Bu, {appName} ana sayfasıdır. Sol menüden diğer sayfalara erişebilirsiniz.",
+    "adminWelcome": "Hoşgeldin, Admin!",
+    "adminMsg": "Admin olarak, kullanıcı yönetimi ve borç yönetimi sayfalarına erişiminiz bulunmaktadır."
+  },
+  "DebtStatus": {
+    "debtStatus": "Borç Durumu",
+    "totalDebt": "Toplam Borç",
+    "currencySymbol": "₺"
+  },
+  "DebtManagement": {
+    "debtManagement": "Borç Yönetimi",
+    "addDebt": "Borç Ekle",
+    "listDebt": "Borç Listesi",
+    "user": "Kullanıcı",
+    "amount": "Miktar (₺)",
+    "date": "Tarih",
+    "selectUser": "Kullanıcı Seçimi",
+    "userSearchMode": "Kullanıcı Arama Yöntemi",
+    "userSearchModeEmail": "E-Posta",
+    "userSearchModeDoorNumber": "Kapı No",
+    "searchTerm": "Arama Terimi",
+    "doorNumber": "Kapı No",
+    "debt": "Borç"
+  },
+  "Users": {
+    "userManagement": "Kullanıcı Yönetimi",
+    "editUser": "Kullanıcı Düzenle",
+    "addUser": "Yeni Kullanıcı Ekle",
+    "name": "İsim",
+    "surname": "Soyad",
+    "telephone": "Telefon",
+    "flatNumber": "Daire No",
+    "email": "Email",
+    "password": "Şifre",
+    "add": "Ekle",
+    "update": "Güncelle",
+    "role": "Rol",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "save": "Kaydet",
+    "searchUser": "Kullanıcı Ara",
+    "userCreateMsg": "Kullanıcı başarıyla oluşturuldu ve giriş bilgileri e-posta ile gönderildi."
+  }
+}
