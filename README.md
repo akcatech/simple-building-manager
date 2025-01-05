@@ -1,5 +1,5 @@
 
-# Site Management System
+# Site Building Management (SBM)
 
 A simple and multilingual management system for residential communities. This application allows administrators to manage announcements, debts, and members, while residents can log in to view announcements and their financial details.
 
