@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect } from 'react'
+import { useRouter, useParams } from 'next/navigation'
 import { Typography, Card, CardContent, Grid2, Container } from '@mui/material'
 import { useAuth } from '@/hooks/useAuth'
 import config from '@/config/config'
@@ -8,6 +10,19 @@ import { useTranslations } from 'next-intl'
 export default function Home() {
   const { user } = useAuth()
   const t = useTranslations('Dashboard')
+  const router = useRouter()
+  const params = useParams()
+  const lang = params?.lang || 'tr'
+
+  useEffect(() => {
+    if (!user) {
+      router.push(`/${lang}/login`)
+    }
+  }, [user, router])
+
+  if (!user) {
+    return null
+  }
 
   return (
     <Container maxWidth='md'>
