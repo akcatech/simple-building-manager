@@ -11,7 +11,12 @@
     "emailLabel": "Email",
     "passwordLabel": "Şifre",
     "loginButton": "Giriş Yap",
-    "loginError": "Giriş başarısız. Lütfen email ve şifrenizi kontrol edin."
+    "loginError": "Giriş başarısız. Lütfen email ve şifrenizi kontrol edin.",
+    "incorrectEmail": "Lütfen geçerli bir mail adresi giriniz",
+    "forgotPassword": "Şifremi unuttum?",
+    "send": "Gönder",
+    "cancel": "İptal",
+    "resetSuccess": "Şifre sıfırlama talebiniz alınmıştır."
   },
   "Announcement": {
     "title": "Duyurular",

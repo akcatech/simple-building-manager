@@ -11,7 +11,12 @@
     "emailLabel": "Email",
     "passwordLabel": "Password",
     "loginButton": "Login",
-    "loginError": "Login failed. Please check your email and password."
+    "loginError": "Login failed. Please check your email and password",
+    "incorrectEmail": "Please enter a valid email address.",
+    "forgotPassword": "Forgot password?",
+    "send": "Send",
+    "cancel": "Cancel",
+    "resetSuccess": "Password reset request successfully submitted"
   },
   "Announcement": {
     "title": "Announcements",
