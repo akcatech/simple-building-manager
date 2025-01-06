@@ -70,7 +70,9 @@
     "userSearchModeDoorNumber": "By Door Number",
     "searchTerm": "Search Term",
     "doorNumber": "Door Number",
-    "debt": "Debt"
+    "debt": "Debt",
+    "remove": "Remove",
+    "deleteSuccess": "Deleted successfully"
   },
   "Users": {
     "userManagement": "User Management",

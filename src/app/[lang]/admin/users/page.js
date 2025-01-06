@@ -1,7 +1,17 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { collection, setDoc, deleteDoc, doc, getDocs, query, orderBy, serverTimestamp } from 'firebase/firestore'
+import {
+  collection,
+  setDoc,
+  deleteDoc,
+  doc,
+  getDocs,
+  query,
+  orderBy,
+  serverTimestamp,
+  updateDoc
+} from 'firebase/firestore'
 import { createUserWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'
 import { db, auth } from '@/lib/firebase'
 import {
