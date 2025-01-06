@@ -115,7 +115,7 @@ export default function AdminDebts() {
       await deleteDoc(doc(db, 'debts', debtId))
 
       setDebts(prevDebts => prevDebts.filter(debt => debt.id !== debtId))
-      notify(m('deleteSuccess'), 'success')
+      notify(t('deleteSuccess'), 'success')
     } catch (error) {
       console.error('Error deleting debt:', error)
       notify(m('deleteError'), 'error')
