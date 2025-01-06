@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { collection, getDocs, addDoc } from 'firebase/firestore'
+import { collection, getDocs, addDoc, deleteDoc, doc } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import { useAuth } from '@/hooks/useAuth'
 import {
@@ -110,6 +110,18 @@ export default function AdminDebts() {
     setSelectedUser(foundUser || null)
   }
 
+  const handleDeleteDebt = async debtId => {
+    try {
+      await deleteDoc(doc(db, 'debts', debtId))
+
+      setDebts(prevDebts => prevDebts.filter(debt => debt.id !== debtId))
+      notify(m('deleteSuccess'), 'success')
+    } catch (error) {
+      console.error('Error deleting debt:', error)
+      notify(m('deleteError'), 'error')
+    }
+  }
+
   const filteredDebts = debts.filter(debt => debt.userId === selectedUser?.id)
 
   if (loading) return <Spinner />
@@ -212,6 +224,14 @@ export default function AdminDebts() {
                     <Typography variant='body1'>
                       {t('date')}: {debt.month}
                     </Typography>
+                    <Button
+                      variant='outlined'
+                      color='secondary'
+                      onClick={() => handleDeleteDebt(debt.id)}
+                      style={{ marginTop: '1rem' }}
+                    >
+                      {t('remove')}
+                    </Button>
                   </CardContent>
                 </Card>
               </Grid2>

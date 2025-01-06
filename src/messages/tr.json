@@ -70,7 +70,9 @@
     "userSearchModeDoorNumber": "Kapı No",
     "searchTerm": "Arama Terimi",
     "doorNumber": "Kapı No",
-    "debt": "Borç"
+    "debt": "Borç",
+    "remove": "Sil",
+    "deleteSuccess": "Başarıyla silindi"
   },
   "Users": {
     "userManagement": "Kullanıcı Yönetimi",
