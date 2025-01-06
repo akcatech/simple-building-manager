@@ -33,7 +33,7 @@ export default function Home() {
           <Card sx={{ width: '100%', mb: 3 }}>
             <CardContent>
               <Typography variant='h4' component='h1' gutterBottom>
-                {t('welcome', { name: user?.email })}
+                {t('welcome', { name: `${user?.firstName || ''} ${user?.lastName || ''}`.trim() })}
               </Typography>
               <Typography variant='body1'>{t('userMsg', { appName: config.appName })}</Typography>
             </CardContent>

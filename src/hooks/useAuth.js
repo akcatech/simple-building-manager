@@ -15,6 +15,9 @@ export function useAuth() {
         setUser({
           uid: firebaseUser.uid,
           email: firebaseUser.email,
+          firstName: userData.firstName,
+          lastName: userData.lastName,
+          apartmentNo: userData.apartmentNo,
           role: userData?.role || 'user'
         })
       } else {

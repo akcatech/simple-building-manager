@@ -1,4 +1,3 @@
-
 # Simple Building Management (SBM)
 
 This is a simple and multilingual management system for residential communities. This application allows administrators to manage announcements, debts, and members, while residents can log in to view announcements and their financial details.
@@ -22,6 +21,7 @@ This is a simple and multilingual management system for residential communities.
 This project is built using the following technologies and libraries:
 
 ### Frontend
+
 - [Next.js](https://nextjs.org) (14.x): React framework for server-side rendering and static site generation.
 - [React](https://reactjs.org) (18.x): Core UI framework.
 - [Material-UI (MUI)](https://mui.com): UI components and icons.
@@ -29,11 +29,13 @@ This project is built using the following technologies and libraries:
 - [next-intl](https://next-intl.com): Internationalization for Next.js.
 
 ### Backend & Authentication
-- [Firebase](https://firebase.google.com): 
+
+- [Firebase](https://firebase.google.com):
   - Authentication: `@firebase/auth`
   - Firestore Database: Real-time data storage and retrieval.
 
 ### Utilities
+
 - [Day.js](https://day.js.org): Lightweight date manipulation library.
 - [React Toastify](https://github.com/fkhadra/react-toastify): Toast notifications.
 
@@ -51,21 +53,26 @@ Follow these steps to set up the project locally:
 ### Steps
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/your-username/site-management.git
    cd site-management
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
+
    or
+
    ```bash
    yarn install
    ```
 
 3. **Configure Firebase**:
+
    - Create a Firebase project in the [Firebase Console](https://console.firebase.google.com).
    - Add the Firebase configuration to `.env.local`:
      ```
@@ -75,10 +82,13 @@ Follow these steps to set up the project locally:
      ```
 
 4. **Start the development server**:
+
    ```bash
    npm run dev
    ```
+
    or
+
    ```bash
    yarn dev
    ```
@@ -89,11 +99,13 @@ Follow these steps to set up the project locally:
 ### Build for Production
 
 To build the application for production:
+
 ```bash
 npm run build
 ```
 
 Then start the production server:
+
 ```bash
 npm start
 ```
@@ -129,7 +141,12 @@ This project is licensed under the **Apache 2.0 License**. See the [LICENSE](./L
 
 ## 📸 Screenshots
 
-(Add screenshots of the application here.)
+![Login](./screenshots/login.png)
+![User Management](./screenshots/user-management.png)
+![Announcement Management](./screenshots/announcement-management.png)
+![Dept Management (Add)](./screenshots/dept-management-add.png)
+![Dept Management (List / Delete)](./screenshots/dept-management-list-delete.png)
+![Dept Status](./screenshots/dept-status.png)
 
 ---
 
