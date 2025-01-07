@@ -5,7 +5,7 @@ import { db } from '@/lib/firebase'
 import { useAuth } from '@/hooks/useAuth'
 import { useTranslations } from 'next-intl'
 import Spinner from '@/app/components/Spinner'
-import { Container, Typography, List, ListItem, ListItemText, Card, CardContent } from '@mui/material'
+import { Container, Typography, List, ListItem, ListItemText, Card, CardContent, Box } from '@mui/material'
 
 export default function DebtStatus() {
   const { user, loading } = useAuth()
@@ -30,18 +30,35 @@ export default function DebtStatus() {
   const totalDebt = debts.reduce((total, debt) => total + parseFloat(debt.amount), 0)
 
   return (
-    <Container>
+    <Container maxWidth='md'>
       <Typography variant='h4' component='h1' gutterBottom>
         {t('debtStatus')}
       </Typography>
       <Typography variant='h5' component='h2' gutterBottom>
-        {t('totalDebt')}: {t('currencySymbol')}
-        {totalDebt}
+        {t('totalDebt')}:
+        <Box
+          component='span'
+          sx={{
+            fontSize: '2rem',
+            fontWeight: 'bold',
+            color: 'error.main',
+            ml: 1
+          }}
+        >
+          {t('currencySymbol')}
+          {totalDebt}
+        </Box>
       </Typography>
-      <List>
+      <List sx={{ width: '100%' }}>
         {debts.map(debt => (
-          <ListItem key={debt.id}>
-            <Card variant='outlined' style={{ width: '100%', marginBottom: '1rem' }}>
+          <ListItem key={debt.id} sx={{ width: '100%', p: 0 }}>
+            <Card
+              variant='outlined'
+              sx={{
+                width: '100%',
+                mb: 2
+              }}
+            >
               <CardContent>
                 <ListItemText primary={debt.month} secondary={`${t('currencySymbol')}${debt.amount}`} />
               </CardContent>
