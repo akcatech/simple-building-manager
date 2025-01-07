@@ -1,13 +1,30 @@
 'use client'
 
-import { Typography, Card, CardContent, Grid2, Container } from '@mui/material'
+import { Grid2, Typography, Card, CardContent, Container } from '@mui/material'
+import { useRouter } from 'next/navigation'
 import { useAuth } from '@/hooks/useAuth'
-import config from '@/config/config'
+import { useEffect } from 'react'
 import { useTranslations } from 'next-intl'
+import config from '@/config/config'
 
-export default function Home() {
-  const { user } = useAuth()
+export default function Dashboard() {
+  const { user, loading } = useAuth()
+  const router = useRouter()
   const t = useTranslations('Dashboard')
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/tr/login')
+    }
+  }, [loading, user, router])
+
+  if (loading) {
+    return <Typography>Loading...</Typography>
+  }
+
+  if (!user) {
+    return null
+  }
 
   return (
     <Container maxWidth='md'>
@@ -16,7 +33,7 @@ export default function Home() {
           <Card sx={{ width: '100%', mb: 3 }}>
             <CardContent>
               <Typography variant='h4' component='h1' gutterBottom>
-                {t('welcome', { name: user?.email })}
+                {t('welcome', { name: `${user?.firstName || ''} ${user?.lastName || ''}`.trim() })}
               </Typography>
               <Typography variant='body1'>{t('userMsg', { appName: config.appName })}</Typography>
             </CardContent>

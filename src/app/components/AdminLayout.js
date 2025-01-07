@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import {
   AppBar,
   Toolbar,
@@ -12,15 +12,18 @@ import {
   ListItemText,
   Container,
   Box,
-  Button
+  Button,
+  IconButton
 } from '@mui/material'
-import { Home, Campaign, CurrencyLira, People, Summarize } from '@mui/icons-material'
+import { Home, Campaign, CurrencyLira, People, Summarize, Menu as MenuIcon } from '@mui/icons-material'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/useAuth'
 import { useParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import config from '@/config/config'
 import LanguageSwitcher from './LanguageSwitcher'
+import { useTheme } from '@mui/material/styles'
+import { useMediaQuery } from '@mui/material'
 
 const drawerWidth = 240
 
@@ -31,6 +34,14 @@ export default function AdminLayout({ children }) {
   const t = useTranslations('Menu')
   const f = useTranslations('Footer')
   const h = useTranslations('Header')
+
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen)
+  }
 
   const menuItems = [
     {
@@ -71,10 +82,48 @@ export default function AdminLayout({ children }) {
     }
   ]
 
+  const drawerContent = (
+    <>
+      <Toolbar />
+      <Box sx={{ overflow: 'auto' }}>
+        <List>
+          {menuItems.map(
+            item =>
+              item.roles.includes(user?.role) && (
+                <Link
+                  href={`/${lang}${item.path}`}
+                  key={item.text}
+                  locale={lang}
+                  passHref
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  <ListItem button onClick={isMobile ? handleDrawerToggle : null}>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.text} />
+                  </ListItem>
+                </Link>
+              )
+          )}
+        </List>
+      </Box>
+    </>
+  )
+
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar position='fixed' sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}>
         <Toolbar>
+          {isMobile && (
+            <IconButton
+              color='inherit'
+              aria-label='open drawer'
+              edge='start'
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
           <Typography variant='h6' noWrap component='div'>
             {config.appName}
           </Typography>
@@ -85,40 +134,27 @@ export default function AdminLayout({ children }) {
           </Button>
         </Toolbar>
       </AppBar>
+
       <Drawer
-        variant='permanent'
+        variant={isMobile ? 'temporary' : 'permanent'}
+        open={!isMobile || mobileOpen}
+        onClose={handleDrawerToggle}
         sx={{
           width: drawerWidth,
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: {
             width: drawerWidth,
             boxSizing: 'border-box'
-          }
+          },
+          display: { xs: isMobile ? 'block' : 'none', sm: 'block' }
+        }}
+        ModalProps={{
+          keepMounted: true
         }}
       >
-        <Toolbar />
-        <Box sx={{ overflow: 'auto' }}>
-          <List>
-            {menuItems.map(
-              item =>
-                item.roles.includes(user?.role) && (
-                  <Link
-                    href={`/${lang}${item.path}`}
-                    key={item.text}
-                    locale={lang}
-                    passHref
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                  >
-                    <ListItem button>
-                      <ListItemIcon>{item.icon}</ListItemIcon>
-                      <ListItemText primary={item.text} />
-                    </ListItem>
-                  </Link>
-                )
-            )}
-          </List>
-        </Box>
+        {drawerContent}
       </Drawer>
+
       <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         <Container>{children}</Container>

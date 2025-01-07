@@ -47,9 +47,9 @@
     "logout": "Çıkış Yap"
   },
   "Dashboard": {
-    "welcome": "Hoş geldiniz, {name}!",
-    "userMsg": "Bu, {appName} ana sayfasıdır. Sol menüden diğer sayfalara erişebilirsiniz.",
-    "adminWelcome": "Hoşgeldin, Admin!",
+    "welcome": "Hoş geldin {name}!",
+    "userMsg": "Bu {appName} ana sayfasıdır. Sol menüden diğer sayfalara erişebilirsiniz.",
+    "adminWelcome": "Hoşgeldin Admin!",
     "adminMsg": "Admin olarak, kullanıcı yönetimi ve borç yönetimi sayfalarına erişiminiz bulunmaktadır."
   },
   "DebtStatus": {
